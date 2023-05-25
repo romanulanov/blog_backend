@@ -84,72 +84,38 @@
                 </div>
               </div>
               <p>{{post.text}} </p>
+              
               <div class="news_d_footer flex-column flex-sm-row">
                 <a href="#"><span class="align-middle mr-2"><i class="ti-heart"></i></span>{{post.likes_amount}} people like this</a>
-                <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>03 Comments</a>
+                <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>{{ post.comments|length }} Comments</a>
                 <div class="news_socail ml-sm-auto mt-sm-0 mt-2">
                   <a href="#"><i class="fab fa-facebook-f"></i></a>
                   <a href="#"><i class="fab fa-twitter"></i></a>
                   <a href="#"><i class="fab fa-dribbble"></i></a>
                   <a href="#"><i class="fab fa-behance"></i></a>
                 </div>
+              </div>  
+              <br><br>
+                <h5><b>{{post.comments|length}} Comments</b></h5>
+               {%for comment in post.comments%}
+               <br><br>
+              <div class="single-comment justify-content-between d-flex">
+                <div class="user justify-content-between d-flex">
+                  <div class="desc">
+                    <h2>{{comment.author}}</h2>
+                    <p class="date">{{comment.published_at}} </p>
+                    <h5> {{comment.text}}</h5>
+                  </div>
+                </div>
+                <div class="reply-btn">
+                        <a href="" class="btn-reply text-uppercase">reply</a> 
+                </div>
               </div>
-            </div>
-            
-
-            <div class="comments-area">
-              <h4>03 Comments</h4>
-              <div class="comment-list">
-                <div class="single-comment justify-content-between d-flex">
-                  <div class="user justify-content-between d-flex">
-                    <div class="desc">
-                      <h5><a href="#">Emilly Blunt</a></h5>
-                      <p class="date">December 4, 2017 at 3:12 pm </p>
-                      <p class="comment">
-                          Never say goodbye till the end comes!
-                      </p>
-                    </div>
-                  </div>
-                  <div class="reply-btn">
-                          <a href="" class="btn-reply text-uppercase">reply</a> 
-                  </div>
-                </div>
-              </div>	
-              <div class="comment-list">
-                <div class="single-comment justify-content-between d-flex">
-                  <div class="user justify-content-between d-flex">
-                    <div class="desc">
-                      <h5><a href="#">Maria Luna</a></h5>
-                      <p class="date">December 4, 2017 at 3:12 pm </p>
-                      <p class="comment">
-                          Never say goodbye till the end comes!
-                      </p>
-                    </div>
-                  </div>
-                  <div class="reply-btn">
-                          <a href="" class="btn-reply text-uppercase">reply</a> 
-                  </div>
-                </div>
-              </div>	
-              <div class="comment-list">
-                <div class="single-comment justify-content-between d-flex">
-                  <div class="user justify-content-between d-flex">
-                    <div class="desc">
-                      <h5><a href="#">Ina Hayes</a></h5>
-                      <p class="date">December 4, 2017 at 3:12 pm </p>
-                      <p class="comment">
-                          Never say goodbye till the end comes!
-                      </p>
-                    </div>
-                  </div>
-                  <div class="reply-btn">
-                          <a href="" class="btn-reply text-uppercase">reply</a> 
-                  </div>
-                </div>
-              </div>	                                             				
+              {% endfor %}
+                	
+                                           				
             </div>
           </div>
-
 
           <!-- Start Blog Post Siddebar -->
           <div class="col-lg-4 sidebar-widgets">
@@ -164,14 +130,15 @@
                 </div>
                 <button class="bbtns d-block mt-20 w-100">Subcribe</button>
               </div>
-
-
               <div class="single-sidebar-widget post-category-widget">
                 <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
               </div>
             </div>
           </div>
           <!-- End Blog Post Siddebar -->
+          
+
+
         </div>
       </div>
     </section>
