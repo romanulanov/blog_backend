@@ -12,36 +12,41 @@
         <section class="mb-30px">
           <div class="container">
             <div class="hero-banner">
-              <img class="card-img rounded-0" src="{% static  'img/banner/hero-banner.png' %}" alt="">
-                <div class="hero-banner__content">
-                  <h3>Tours &amp; Travels</h3>
-                  <h1>Amazing Places on earth</h1>
-                  <h4>December 12, 2018</h4>
-                </div>    
+              <div class="hero-banner__content">
+                <h3>Tours &amp; Travels</h3>
+                <h1>Amazing Places on earth</h1>
+                <h4>December 12, 2018</h4>
+              </div>
             </div>
           </div>
         </section>
         <!--================Hero Banner end =================-->
 
         <!--================ Blog slider start =================-->
-        <section>
+        <section> 
           <div class="container">
+            {% for post in most_popular_posts%}
             <div class="d-flex">
-              {% for post in most_popular_posts%} 
+              
                 <div class="flex-fill" style="margin-right: 30px;">
+                  
                   <div class="card blog__slide text-center">
                     <div class="blog__slide__img">
                       <img class="card-img rounded-0" src={{post.image_url}} alt="">
                     </div>
                     <div class="blog__slide__content">
-                      <b><a href="{% url 'post_detail' post.slug  %}">{{post.title}}</b>
+                      <h3><a href="{% url 'post_detail' post.slug  %}">{{post.title}}</a></h3>
                       <p>{{post.published_at}}</p>
                     </div>
+                    
                   </div>
+                  
                 </div>
               {% endfor %}
             </div>
+            
           </div>
+          
         </section>
         <!--================ Blog slider end =================-->
 
