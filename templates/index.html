@@ -35,7 +35,7 @@
                       <img class="card-img rounded-0" src={{post.image_url}} alt="">
                     </div>
                     <div class="details mt-20">
-                      <a href="{% url 'post_detail' post.slug  %}"><h3>{{post.title}}</a></h3>
+                      <a href="{% url 'post_detail' post.slug  %}"><font color="black"> <h3>{{post.title}}</font></a></h3>
                       <p>{{post.published_at}}</p>
                     </div>
                     
@@ -70,7 +70,7 @@
                       </ul>
                     </div>
                     <div class="details mt-20">
-                      <a href="{% url 'post_detail' post.slug  %}"><h3>{{post.title}}</a></h3>
+                      <a href="{% url 'post_detail' post.slug  %}"><font color="black"> <h3>{{post.title}}</font></a></h3>
                       <p>{{post.text|truncatechars:200}}</p>
                       <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
                     </div>
