@@ -25,7 +25,6 @@
     </section>
     <!--================ Hero sm Banner end =================-->    
     
-
     <!--================ Start Blog Post Area =================-->
     <section class="blog-post-area section-margin">
       <div class="container">
@@ -49,7 +48,6 @@
                 </div>
               </div>
               <p>{{post.text}} </p>
-              
               <div class="news_d_footer flex-column flex-sm-row">
                 <a href="#"><span class="align-middle mr-2"><i class="ti-heart" style="color:red"></i></span>{{post.likes_amount}} people like this</a>
                 <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>{{ post.comments|length }} Comments</a>
@@ -62,20 +60,20 @@
               </div>  
               <br><br>
                 <h5><b>{{post.comments|length}} Comments</b></h5>
-               {%for comment in post.comments%}
-               <br><br>
-              <div class="single-comment justify-content-between d-flex">
-                <div class="user justify-content-between d-flex">
-                  <div class="desc">
-                    <h2>{{comment.author}}</h2>
-                    <p class="date">{{comment.published_at}} </p>
-                    <h5> {{comment.text}}</h5>
+              {%for comment in post.comments%}
+                <br><br>
+                <div class="single-comment justify-content-between d-flex">
+                  <div class="user justify-content-between d-flex">
+                    <div class="desc">
+                      <h2>{{comment.author}}</h2>
+                      <p class="date">{{comment.published_at}} </p>
+                      <h5> {{comment.text}}</h5>
+                    </div>
+                  </div>
+                  <div class="reply-btn">
+                    <a href="" class="btn-reply text-uppercase">reply</a> 
                   </div>
                 </div>
-                <div class="reply-btn">
-                  <a href="" class="btn-reply text-uppercase">reply</a> 
-                </div>
-              </div>
               {% endfor %}                             				
             </div>
           </div>
