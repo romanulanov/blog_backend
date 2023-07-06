@@ -57,7 +57,7 @@
               </div>
             </div>  
             <br><br>
-              <h5><b>{{post.comments|length}} Comments</b></h5>
+            <h5><b>{{post.comments|length}} Comments</b></h5>
             {%for comment in post.comments%}
               <br><br>
               <div class="single-comment justify-content-between d-flex">
@@ -100,4 +100,3 @@
   <!--================ End Blog Post Area =================--> 
   <script src="{% static "scripts.js" %}"></script>
 {% endblock %}
-</html>
